@@ -54,7 +54,7 @@ nyako_no_stp_wrds %>% inner_join(get_sentiments("bing")) %>%
   comparison.cloud(colors = c("blue", "red"), max.words = 1000)
 
 pattern <- read.csv('pattern.csv')
-pattern %>% arrange(-Views) %>% filter(Views <= 15000) %>% 
+pattern %>% arrange(-Views) %>% filter(Views <= 150000) %>% 
   ggplot() + 
   geom_col(aes(reorder(Date, Views), Views)) + 
   coord_flip()
