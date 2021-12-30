@@ -13,7 +13,7 @@ df <- as.data.frame(unlist(my_csv_files))
 
 # %>% 
 #   bind_cols() %>% 
-#   select(A...1, B...2, E...5)
+#   select(A...1, B...2, 
 
 # nyako <- read.csv('D:/R/NYAKO/nyako_13_i_would_rather.csv', header = F)
 names(df) <- 'text'
@@ -54,7 +54,8 @@ nyako_no_stp_wrds %>% inner_join(get_sentiments("bing")) %>%
   comparison.cloud(colors = c("blue", "red"), max.words = 1000)
 
 pattern <- read.csv('pattern.csv')
-pattern %>% arrange(-Views) %>% filter(Views <= 150000) %>% 
+pattern %>% arrange(-Views) %>% 
+  #filter(Views <= 150000) %>% 
   ggplot() + 
   geom_col(aes(reorder(Date, Views), Views)) + 
   coord_flip()
