@@ -12,7 +12,7 @@ my_csv_files <- list.files(path = 'data',
 df <- as.data.frame(unlist(my_csv_files))
 
 # %>% 
-#   bind_cols() %>% 
+
 
 # nyako <- read.csv('D:/R/NYAKO/nyako_13_i_would_rather.csv', header = F)
 names(df) <- 'text'
