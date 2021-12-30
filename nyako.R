@@ -13,7 +13,6 @@ df <- as.data.frame(unlist(my_csv_files))
 
 # %>% 
 #   bind_cols() %>% 
-#   select(A...1, B...2, 
 
 # nyako <- read.csv('D:/R/NYAKO/nyako_13_i_would_rather.csv', header = F)
 names(df) <- 'text'
