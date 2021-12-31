@@ -1,7 +1,7 @@
 library(tidyverse); library(stopwords); library(wordcloud); 
 library(reshape);library(scales); library(quanteda); 
 library(quanteda.textplots); library(quanteda.textstats); 
-library(wesanderson); library(highcharter);
+library(wesanderson); library(highcharter); library(gghighlight)
 library(htmlwidgets); library(networkD3); library(tidytext); library(reshape2)
 
 my_csv_files <- list.files(path = 'data', 
@@ -35,8 +35,9 @@ nyako_no_stp_wrds %>% count(word, sort = TRUE) %>%
   filter(n > 150) %>% 
   mutate(word = reorder(word, n)) %>% 
   ggplot(aes(n, word)) +
-  geom_col() +
+  geom_col(fill = 'purple') +
   labs(y = "Words Used", x = "Frequency of use") +
+  gghighlight(word %in% c('people', 'video', 'show')) +
   theme(text = element_text(size = 24))
 
 anti_join(nyako_no_stp_wrds, stp_wrds, by = 'word') %>% 
