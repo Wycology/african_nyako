@@ -53,5 +53,6 @@ pattern <- read.csv('pattern.csv')
 pattern %>% arrange(-Views) %>% 
   #filter(Views <= 150000) %>% 
   ggplot() + 
-  geom_col(aes(reorder(Date, Views), Views)) + 
+  geom_col(aes(reorder(Date, Views), Views), fill = 'magenta') + 
+  gghighlight(Date == '8/5/2021') +
   coord_flip()
