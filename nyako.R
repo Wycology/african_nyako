@@ -37,7 +37,7 @@ nyako_no_stp_wrds %>% count(word, sort = TRUE) %>%
   ggplot(aes(n, word)) +
   geom_col(fill = 'purple') +
   labs(y = "Words Used", x = "Frequency of use") +
-  gghighlight(word %in% c('people', 'video', 'show')) +
+  gghighlight(word %in% c('guys', 'yeah', 'video')) +
   theme(text = element_text(size = 24))
 
 anti_join(nyako_no_stp_wrds, stp_wrds, by = 'word') %>% 
@@ -47,7 +47,7 @@ anti_join(nyako_no_stp_wrds, stp_wrds, by = 'word') %>%
 nyako_no_stp_wrds %>% inner_join(get_sentiments("bing")) %>% 
   count(word, sentiment, sort = TRUE) %>% 
   acast(word ~ sentiment, value.var = 'n', fill = 0) %>% 
-  comparison.cloud(colors = c("blue", "red"), max.words = 1000)
+  comparison.cloud(colors = c("red", "blue"), max.words = 1000)
 
 pattern <- read.csv('pattern.csv')
 pattern %>% arrange(-Views) %>% 
@@ -56,3 +56,4 @@ pattern %>% arrange(-Views) %>%
   geom_col(aes(reorder(Date, Views), Views), fill = 'magenta') + 
   gghighlight(Date == '8/5/2021') +
   coord_flip()
+
