@@ -35,7 +35,7 @@ nyako_no_stp_wrds %>% count(word, sort = TRUE) %>%
   filter(n > 150) %>% 
   mutate(word = reorder(word, n)) %>% 
   ggplot(aes(n, word)) +
-  geom_col(fill = 'purple') +
+  geom_col(fill = 'purple')  +
   labs(y = "Words Used", x = "Frequency of use") +
   gghighlight(word %in% c('guys', 'yeah', 'video')) +
   theme(text = element_text(size = 24))
