@@ -4,8 +4,7 @@ library(quanteda.textplots); library(quanteda.textstats);
 library(wesanderson); library(highcharter); library(gghighlight)
 library(htmlwidgets); library(networkD3); library(tidytext); library(reshape2)
 
-my_csv_files <- list.files(path = 'data', pattern = "*.csv", 
-                                 full.names = TRUE) %>%
+my_csv_files <- list.files(path = 'data', pattern = "*.csv", full.names = TRUE) %>%
   lapply(read.csv, header = F)
 
 df <- as.data.frame(unlist(my_csv_files))
