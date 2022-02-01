@@ -53,4 +53,4 @@ pattern %>% arrange(-Views) %>%
   ggplot() + 
   geom_col(aes(reorder(Date, Views), Views), fill = 'magenta') + 
   gghighlight(Date == '8/5/2021') +
-  coord_flip()
+  coord_flip() # Alternating the axes
