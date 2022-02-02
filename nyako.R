@@ -14,7 +14,7 @@ names(df) <- 'text'
 df <- df %>% mutate(divs = 1:nrow(df)) %>% 
   filter(divs%%2 == 0)
 
-nyako <- df
+nyako <- df # Assigning the dataframe to another object 'nyako'
 
 head(nyako)
 
