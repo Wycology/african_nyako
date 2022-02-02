@@ -16,7 +16,7 @@ df <- df %>% mutate(divs = 1:nrow(df)) %>%
 
 nyako <- df # Assigning the dataframe to another object 'nyako'
 
-head(nyako)
+head(nyako) # Checking the first six rows of the dataset
 
 nyako
 nyako_tokenized <- unnest_tokens(tbl = nyako, input = text, output = word)
