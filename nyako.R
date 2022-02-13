@@ -7,9 +7,9 @@ library(htmlwidgets); library(networkD3); library(tidytext); library(reshape2)
 my_csv_files <- list.files(path = 'data', pattern = "*.csv", full.names = TRUE) %>%
   lapply(read.csv, header = F) # This creates a list of files 
 
-df <- as.data.frame(unlist(my_csv_files))
+df <- as.data.frame(unlist(my_csv_files)) # Combinining all the csv files into a single data frame
 
-names(df) <- 'text'
+names(df) <- 'text' # Setting the column name to text
 
 df <- df %>% mutate(divs = 1:nrow(df)) %>% 
   filter(divs%%2 == 0)
