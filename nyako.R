@@ -21,9 +21,11 @@ head(nyako) # Checking the first six rows of the dataset
 nyako_tokenized <- unnest_tokens(tbl = nyako, input = text, output = word)
 
 stp_wrds <- get_stopwords(source = "smart")
-head(stp_wrds)
 
-nyako_no_stp_wrds <- anti_join(nyako_tokenized, stp_wrds)
+head(stp_wrds) # Checking the first few rows of the stp_wrds object
+
+nyako_no_stp_wrds <- anti_join(nyako_tokenized, stp_wrds) # Retains words in nyako_tokenized
+# that are not in stp_wrds
 nyako_no_stp_wrds
 
 nyako_no_stp_wrds %>% count(word, sort = TRUE)
