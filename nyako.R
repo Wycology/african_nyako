@@ -41,7 +41,7 @@ nyako_no_stp_wrds %>% count(word, sort = TRUE) %>%
 
 anti_join(nyako_no_stp_wrds, stp_wrds, by = 'word') %>% 
   count(word) %>% 
-  with(wordcloud(word, n, max.words = 1000))
+  with(wordcloud(word, n, max.words = 1000)) # Creating a word cloud
 
 nyako_no_stp_wrds %>% inner_join(get_sentiments("bing")) %>% 
   count(word, sentiment, sort = TRUE) %>% 
