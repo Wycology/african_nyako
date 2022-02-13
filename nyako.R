@@ -18,11 +18,10 @@ nyako <- df # Assigning the dataframe to another object.
 
 head(nyako) # Checking the first six rows of the dataset
 
-nyako
 nyako_tokenized <- unnest_tokens(tbl = nyako, input = text, output = word)
 
 stp_wrds <- get_stopwords(source = "smart")
-stp_wrds
+head(stp_wrds)
 
 nyako_no_stp_wrds <- anti_join(nyako_tokenized, stp_wrds)
 nyako_no_stp_wrds
