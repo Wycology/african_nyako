@@ -21,7 +21,7 @@ head(nyako) # Checking the first six rows of the dataset
 nyako_tokenized <- unnest_tokens(tbl = nyako, input = text, output = word)
 
 stp_wrds <- get_stopwords(source = "smart") # There are more sources of stop words 
-# see stopwords_getsources()
+# see stopwords_getsources().
 
 head(stp_wrds) # Checking the first few rows of the stp_wrds object
 
