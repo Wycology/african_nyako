@@ -26,7 +26,7 @@ stp_wrds <- get_stopwords(source = "smart") # There are more sources of stop wor
 head(stp_wrds) # Checking the first few rows of the stp_wrds object
 
 nyako_no_stp_wrds <- anti_join(nyako_tokenized, stp_wrds) # Retains words in nyako_tokenized
-# that are not in stp_wrds objec
+# that are not in stp_wrds object
 
 nyako_no_stp_wrds %>% count(word, sort = TRUE) # Arranging the data 
 
