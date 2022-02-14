@@ -9,7 +9,7 @@ my_csv_files <- list.files(path = 'data', pattern = "*.csv", full.names = TRUE) 
 
 df <- as.data.frame(unlist(my_csv_files)) # Combinining all the csv files into a single data frame
 
-names(df) <- 'text' # Setting the column name to text
+names(df) <- 'text' # Setting the column name to text.
 .
 df <- df %>% mutate(divs = 1:nrow(df)) %>% # Adding a column to the dataframe. 
   filter(divs%%2 == 0)
