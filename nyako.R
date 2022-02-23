@@ -23,7 +23,7 @@ nyako_tokenized <- unnest_tokens(tbl = nyako, input = text, output = word)
 stp_wrds <- get_stopwords(source = "smart") # There are more sources of stop words 
 # see stopwords_getsources().
 
-head(stp_wrds) # Checking the first few rows of
+head(stp_wrds) # Checking the first few row
 
 nyako_no_stp_wrds <- anti_join(nyako_tokenized, stp_wrds) # Retains words in nyako_tokenized
 # that are not in stp_wrds object.
